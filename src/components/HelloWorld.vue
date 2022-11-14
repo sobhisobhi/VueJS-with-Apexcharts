@@ -1,9 +1,17 @@
 <template>
   <div>
-    <apexchart 
-      width="500" type="bar" 
-      :options="options" :series="series">
-    </apexchart>  
+    <div class="chart-wrapper">
+      <apexchart 
+        width="500" type="bar" 
+        :options="options" :series="series">
+      </apexchart>  
+    </div>
+    <div class="chart-wrapper">
+      <apexchart 
+        width="800" type="line" 
+        :options="options" :series="series">
+      </apexchart>
+    </div>
   </div>
 </template>
 
@@ -17,7 +25,15 @@ export default {
       },
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-      }
+      },
+      title: {
+        text: "Monthly Stock Pricing",
+        align: "center",
+        style: {
+          fontSize: "20px",
+        },
+      },
+      colors: ["#00897b"],
     },
     series: [{
       name: 'series-1',
